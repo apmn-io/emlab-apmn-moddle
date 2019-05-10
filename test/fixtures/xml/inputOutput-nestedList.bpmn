@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn2:definitions
-    xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:bpmn2="http://apmn.io/spec/APMN/MODEL"
     xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
-    xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
-    xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
-    xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+    xmlns:bpmndi="http://apmn.io/spec/APMN/DI"
+    xmlns:di="http://apmn.io/spec/DD/DI"
+    xmlns:dc="http://apmn.io/spec/DD/DC"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     id="_FVEpwO_VEeOtYvXzz5ksgw"
     targetNamespace="http://camunda.org/schema/1.0/bpmn"
@@ -48,25 +48,25 @@
     </bpmn2:endEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_2" name="" sourceRef="wait" targetRef="EndEvent_1"/>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="testProcess">
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+  <bpmndi:APMNDiagram id="BPMNDiagram_1">
+    <bpmndi:APMNPlane id="BPMNPlane_1" apmnElement="testProcess">
+      <bpmndi:APMNShape id="_BPMNShape_StartEvent_2" apmnElement="StartEvent_1">
         <dc:Bounds x="128" y="178" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_UserTask_2" bpmnElement="wait">
+      </bpmndi:APMNShape>
+      <bpmndi:APMNShape id="_BPMNShape_UserTask_2" apmnElement="wait">
         <dc:Bounds x="214" y="156" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="_BPMNShape_StartEvent_2" targetElement="_BPMNShape_UserTask_2">
+      </bpmndi:APMNShape>
+      <bpmndi:APMNEdge id="BPMNEdge_SequenceFlow_1" apmnElement="SequenceFlow_1" sourceElement="_BPMNShape_StartEvent_2" targetElement="_BPMNShape_UserTask_2">
         <di:waypoint x="164" y="196"/>
         <di:waypoint x="214" y="196"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_2" bpmnElement="EndEvent_1">
+      </bpmndi:APMNEdge>
+      <bpmndi:APMNShape id="_BPMNShape_EndEvent_2" apmnElement="EndEvent_1">
         <dc:Bounds x="364" y="178" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="_BPMNShape_UserTask_2" targetElement="_BPMNShape_EndEvent_2">
+      </bpmndi:APMNShape>
+      <bpmndi:APMNEdge id="BPMNEdge_SequenceFlow_2" apmnElement="SequenceFlow_2" sourceElement="_BPMNShape_UserTask_2" targetElement="_BPMNShape_EndEvent_2">
         <di:waypoint x="314" y="196"/>
         <di:waypoint x="364" y="196"/>
-      </bpmndi:BPMNEdge>
-    </bpmndi:BPMNPlane>
-  </bpmndi:BPMNDiagram>
+      </bpmndi:APMNEdge>
+    </bpmndi:APMNPlane>
+  </bpmndi:APMNDiagram>
 </bpmn2:definitions>

@@ -19,9 +19,9 @@ describe('extension', function() {
       connectorId: 'hello_connector'
     });
 
-    var msgEvtDef = moddle.create('bpmn:MessageEventDefinition');
+    var msgEvtDef = moddle.create('apmn:MessageEventDefinition');
 
-    var endEvent = moddle.create('bpmn:EndEvent', {
+    var endEvent = moddle.create('apmn:EndEvent', {
       eventDefinitions: [ msgEvtDef ]
     });
 
@@ -39,7 +39,7 @@ describe('extension', function() {
       name: 'hello_field'
     });
 
-    var intermediateThrowEvent = moddle.create('bpmn:IntermediateThrowEvent');
+    var intermediateThrowEvent = moddle.create('apmn:IntermediateThrowEvent');
 
     var canCloneProperty = extension.canCloneProperty(intermediateThrowEvent, field.$descriptor);
 
@@ -54,8 +54,8 @@ describe('extension', function() {
       body: 'foobar'
     });
 
-    var subProcess = moddle.create('bpmn:SubProcess', {
-      loopCharacteristics: moddle.create('bpmn:MultiInstanceLoopCharacteristics')
+    var subProcess = moddle.create('apmn:SubProcess', {
+      loopCharacteristics: moddle.create('apmn:MultiInstanceLoopCharacteristics')
     });
 
     var canCloneProperty = extension.canCloneProperty(subProcess, retryCycle.$descriptor);

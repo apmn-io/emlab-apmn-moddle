@@ -22,8 +22,8 @@ describe.skip('camunda models', function() {
   it('should parse camunda extensions', function(done) {
 
     var allFiles = [].concat(
-      glob.sync('**/*.bpmn', { cwd: diagramPath, dot: true }),
-      glob.sync('**/*.bpmn20.xml', { cwd: diagramPath, dot: true })
+      glob.sync('**/*.apmn', { cwd: diagramPath, dot: true }),
+      glob.sync('**/*.apmn.xml', { cwd: diagramPath, dot: true })
     );
 
     var results = {
@@ -39,7 +39,7 @@ describe.skip('camunda models', function() {
       var xml = readFile(fullPath);
       var moddle = createModdle();
 
-      moddle.fromXML(xml, 'bpmn:Definitions', function(err, definitions, context) {
+      moddle.fromXML(xml, 'apmn:Definitions', function(err, definitions, context) {
 
         var warnings = context.warnings.filter(function(w) {
           return w.message.indexOf('unresolved reference') === -1;

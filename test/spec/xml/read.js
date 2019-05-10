@@ -24,11 +24,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/process-camunda-historyTimeToLive.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:Process', function(err, proc) {
+        moddle.fromXML(xml, 'apmn:Process', function(err, proc) {
 
           // then
           expect(proc).to.jsonEqual({
-            $type : 'bpmn:Process',
+            $type : 'apmn:Process',
             historyTimeToLive : 'foo'
           });
 
@@ -49,11 +49,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/process-camunda-isStartableInTasklist.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:Process', function(err, proc) {
+        moddle.fromXML(xml, 'apmn:Process', function(err, proc) {
 
           // then
           expect(proc).to.jsonEqual({
-            $type : 'bpmn:Process',
+            $type : 'apmn:Process',
             isStartableInTasklist : true
           });
 
@@ -67,7 +67,7 @@ describe('read', function() {
       it('default value', function() {
 
         // when
-        var bo = moddle.create('bpmn:Process');
+        var bo = moddle.create('apmn:Process');
 
         // then
         expect(bo.get('camunda:isStartableInTasklist')).to.be.true;
@@ -84,11 +84,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/userTask-camunda-priority.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:UserTask', function(err, serviceTask) {
+        moddle.fromXML(xml, 'apmn:UserTask', function(err, serviceTask) {
 
           // then
           expect(serviceTask).to.jsonEqual({
-            $type: 'bpmn:UserTask',
+            $type: 'apmn:UserTask',
             priority: '${ priority }'
           });
 
@@ -107,11 +107,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/serviceTask-camunda-async.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ServiceTask', function(err, serviceTask) {
+        moddle.fromXML(xml, 'apmn:ServiceTask', function(err, serviceTask) {
 
           // then
           expect(serviceTask).to.jsonEqual({
-            $type: 'bpmn:ServiceTask',
+            $type: 'apmn:ServiceTask',
             async: true
           });
 
@@ -127,11 +127,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/signalEventDefinition-camunda-async.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:SignalEventDefinition', function(err, definition) {
+        moddle.fromXML(xml, 'apmn:SignalEventDefinition', function(err, definition) {
 
           // then
           expect(definition).to.jsonEqual({
-            $type: 'bpmn:SignalEventDefinition',
+            $type: 'apmn:SignalEventDefinition',
             async: true
           });
 
@@ -151,11 +151,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/errorEventDefinition-camunda-errorCodeVariable.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ErrorEventDefinition', function(err, definition) {
+        moddle.fromXML(xml, 'apmn:ErrorEventDefinition', function(err, definition) {
 
           // then
           expect(definition).to.jsonEqual({
-            $type: 'bpmn:ErrorEventDefinition',
+            $type: 'apmn:ErrorEventDefinition',
             errorCodeVariable: 'errorCode'
           });
 
@@ -175,11 +175,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/escalationEventDefinition-camunda-escalationCodeVariable.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:EscalationEventDefinition', function(err, definition) {
+        moddle.fromXML(xml, 'apmn:EscalationEventDefinition', function(err, definition) {
 
           // then
           expect(definition).to.jsonEqual({
-            $type: 'bpmn:EscalationEventDefinition',
+            $type: 'apmn:EscalationEventDefinition',
             escalationCodeVariable: 'escalationCode'
           });
 
@@ -284,9 +284,9 @@ describe('read', function() {
         expect(starter).to.jsonEqual({
           $type: 'camunda:PotentialStarter',
           resourceAssignmentExpression: {
-            $type: 'bpmn:ResourceAssignmentExpression',
+            $type: 'apmn:ResourceAssignmentExpression',
             expression: {
-              $type: 'bpmn:FormalExpression',
+              $type: 'apmn:FormalExpression',
               body: 'group2, group(group3), user(user3)'
             }
           }
@@ -305,11 +305,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/formalExpression-resource.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:FormalExpression', function(err, starter) {
+        moddle.fromXML(xml, 'apmn:FormalExpression', function(err, starter) {
 
           // then
           expect(starter).to.jsonEqual({
-            $type: 'bpmn:FormalExpression',
+            $type: 'apmn:FormalExpression',
             resource: 'deployment://some-file'
           });
 
@@ -533,11 +533,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/userTask-camunda-formSupported.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:UserTask', function(err, task) {
+        moddle.fromXML(xml, 'apmn:UserTask', function(err, task) {
 
           // then
           expect(task).to.jsonEqual({
-            $type: 'bpmn:UserTask',
+            $type: 'apmn:UserTask',
             formHandlerClass: 'my.company.FormHandler',
             formKey: 'form.html'
           });
@@ -553,11 +553,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/userTask-camunda-formSupported.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:UserTask', function(err, startEvent) {
+        moddle.fromXML(xml, 'apmn:UserTask', function(err, startEvent) {
 
           // then
           expect(startEvent).to.jsonEqual({
-            $type: 'bpmn:UserTask',
+            $type: 'apmn:UserTask',
             formHandlerClass: 'my.company.FormHandler',
             formKey: 'form.html'
           });
@@ -577,11 +577,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/process-camunda-modelerTemplate.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:Process', function(err, task) {
+        moddle.fromXML(xml, 'apmn:Process', function(err, task) {
 
           // then
           expect(task).to.jsonEqual({
-            $type: 'bpmn:Process',
+            $type: 'apmn:Process',
             modelerTemplate: 'foo'
           });
 
@@ -595,11 +595,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/task-camunda-modelerTemplate.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:Task', function(err, task) {
+        moddle.fromXML(xml, 'apmn:Task', function(err, task) {
 
           // then
           expect(task).to.jsonEqual({
-            $type: 'bpmn:Task',
+            $type: 'apmn:Task',
             modelerTemplate: 'foo'
           });
 
@@ -613,11 +613,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/startEvent-camunda-modelerTemplate.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:StartEvent', function(err, task) {
+        moddle.fromXML(xml, 'apmn:StartEvent', function(err, task) {
 
           // then
           expect(task).to.jsonEqual({
-            $type: 'bpmn:StartEvent',
+            $type: 'apmn:StartEvent',
             modelerTemplate: 'bar'
           });
 
@@ -636,11 +636,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/startEvent-camunda-initiator.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:StartEvent', function(err, proc) {
+        moddle.fromXML(xml, 'apmn:StartEvent', function(err, proc) {
 
           // then
           expect(proc).to.jsonEqual({
-            $type: 'bpmn:StartEvent',
+            $type: 'apmn:StartEvent',
             initiator: 'kermit'
           });
 
@@ -650,17 +650,17 @@ describe('read', function() {
 
     });
 
-    it('bpmn:CallActivity', function(done) {
+    it('apmn:CallActivity', function(done) {
 
       // given
       var xml = readFile('test/fixtures/xml/callActivity.part.bpmn');
 
       // when
-      moddle.fromXML(xml, 'bpmn:CallActivity', function(err, callActivity) {
+      moddle.fromXML(xml, 'apmn:CallActivity', function(err, callActivity) {
 
         // then
         expect(callActivity).to.jsonEqual({
-          $type: 'bpmn:CallActivity',
+          $type: 'apmn:CallActivity',
           calledElementBinding: 'version',
           calledElementVersion: '1',
           calledElementVersionTag: 'version1',
@@ -686,11 +686,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/process-camunda-taskPriority.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:Process', function(err, proc) {
+        moddle.fromXML(xml, 'apmn:Process', function(err, proc) {
 
           // then
           expect(proc).to.jsonEqual({
-            $type : 'bpmn:Process',
+            $type : 'apmn:Process',
             taskPriority : '100'
           });
 
@@ -705,11 +705,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/serviceTask-camunda-taskPriority.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ServiceTask', function(err, task) {
+        moddle.fromXML(xml, 'apmn:ServiceTask', function(err, task) {
 
           // then
           expect(task).to.jsonEqual({
-            $type : 'bpmn:ServiceTask',
+            $type : 'apmn:ServiceTask',
             taskPriority : '100'
           });
 
@@ -727,11 +727,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/process-camunda-jobPriority.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:Process', function(err, proc) {
+        moddle.fromXML(xml, 'apmn:Process', function(err, proc) {
 
           // then
           expect(proc).to.jsonEqual({
-            $type: 'bpmn:Process',
+            $type: 'apmn:Process',
             jobPriority: '100'
           });
 
@@ -746,11 +746,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/serviceTask-camunda-jobPriority.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ServiceTask', function(err, task) {
+        moddle.fromXML(xml, 'apmn:ServiceTask', function(err, task) {
 
           // then
           expect(task).to.jsonEqual({
-            $type: 'bpmn:ServiceTask',
+            $type: 'apmn:ServiceTask',
             jobPriority: '100'
           });
 
@@ -765,11 +765,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/gateway-camunda-jobPriority.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ExclusiveGateway', function(err, gateway) {
+        moddle.fromXML(xml, 'apmn:ExclusiveGateway', function(err, gateway) {
 
           // then
           expect(gateway).to.jsonEqual({
-            $type: 'bpmn:ExclusiveGateway',
+            $type: 'apmn:ExclusiveGateway',
             jobPriority: '${ some - expression }'
           });
 
@@ -784,11 +784,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/event-camunda-jobPriority.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:IntermediateCatchEvent', function(err, proc) {
+        moddle.fromXML(xml, 'apmn:IntermediateCatchEvent', function(err, proc) {
 
           // then
           expect(proc).to.jsonEqual({
-            $type: 'bpmn:IntermediateCatchEvent',
+            $type: 'apmn:IntermediateCatchEvent',
             jobPriority: '100'
           });
 
@@ -799,7 +799,7 @@ describe('read', function() {
     });
 
 
-    describe('bpmn:Process', function() {
+    describe('apmn:Process', function() {
 
       it('extended with camunda:candidateStarterUsers, camunda:candidateStarterGroups, camunda:versionTag', function(done) {
 
@@ -807,11 +807,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/process.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:Process', function(err, proc) {
+        moddle.fromXML(xml, 'apmn:Process', function(err, proc) {
 
           // then
           expect(proc).to.jsonEqual({
-            $type: 'bpmn:Process',
+            $type: 'apmn:Process',
             candidateStarterUsers: 'userInGroup2',
             candidateStarterGroups: 'group1, group2, group3',
             versionTag: '1.0.0'
@@ -824,7 +824,7 @@ describe('read', function() {
     });
 
 
-    describe('bpmn:ScriptTask', function() {
+    describe('apmn:ScriptTask', function() {
 
       it('extended with camunda:resource, camunda:resultVariable', function(done) {
 
@@ -832,11 +832,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/scriptTask.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ScriptTask', function(err, definition) {
+        moddle.fromXML(xml, 'apmn:ScriptTask', function(err, definition) {
 
           // then
           expect(definition).to.jsonEqual({
-            $type: 'bpmn:ScriptTask',
+            $type: 'apmn:ScriptTask',
             scriptFormat: 'python',
             resource: 'some-file.py',
             resultVariable: 'result'
@@ -1135,11 +1135,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/camunda-multiInstance.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:MultiInstanceLoopCharacteristics', function(err, field) {
+        moddle.fromXML(xml, 'apmn:MultiInstanceLoopCharacteristics', function(err, field) {
 
           // then
           expect(field).to.jsonEqual({
-            $type: 'bpmn:MultiInstanceLoopCharacteristics',
+            $type: 'apmn:MultiInstanceLoopCharacteristics',
             isSequential: true,
             collection: '5',
             elementVariable: '5'
@@ -1158,11 +1158,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/businessRuleTask.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:BusinessRuleTask', function(err, proc) {
+        moddle.fromXML(xml, 'apmn:BusinessRuleTask', function(err, proc) {
 
           // then
           expect(proc).to.jsonEqual({
-            $type: 'bpmn:BusinessRuleTask',
+            $type: 'apmn:BusinessRuleTask',
             decisionRef: 'myDecision',
             decisionRefBinding: 'version',
             decisionRefVersion: '1',
@@ -1180,11 +1180,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/callActivity.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:CallActivity', function(err, task) {
+        moddle.fromXML(xml, 'apmn:CallActivity', function(err, task) {
 
           // then
           expect(task).to.jsonEqual({
-            $type: 'bpmn:CallActivity',
+            $type: 'apmn:CallActivity',
             calledElementBinding: 'version',
             calledElementVersion: '1',
             calledElementVersionTag: 'version1',
@@ -1211,11 +1211,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/errorEventDefinition-camunda-errorMessageVariable.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ErrorEventDefinition', function(err, definition) {
+        moddle.fromXML(xml, 'apmn:ErrorEventDefinition', function(err, definition) {
 
           // then
           expect(definition).to.jsonEqual({
-            $type: 'bpmn:ErrorEventDefinition',
+            $type: 'apmn:ErrorEventDefinition',
             errorMessageVariable: 'errorMessage'
           });
 
@@ -1234,11 +1234,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/conditionalEventDefinition-camunda-variableName.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ConditionalEventDefinition', function(err, definition) {
+        moddle.fromXML(xml, 'apmn:ConditionalEventDefinition', function(err, definition) {
 
           // then
           expect(definition).to.jsonEqual({
-            $type: 'bpmn:ConditionalEventDefinition',
+            $type: 'apmn:ConditionalEventDefinition',
             variableName: 'myConditionVar'
           });
 
@@ -1257,11 +1257,11 @@ describe('read', function() {
         var xml = readFile('test/fixtures/xml/conditionalEventDefinition-camunda-variableEvent.part.bpmn');
 
         // when
-        moddle.fromXML(xml, 'bpmn:ConditionalEventDefinition', function(err, definition) {
+        moddle.fromXML(xml, 'apmn:ConditionalEventDefinition', function(err, definition) {
 
           // then
           expect(definition).to.jsonEqual({
-            $type: 'bpmn:ConditionalEventDefinition',
+            $type: 'apmn:ConditionalEventDefinition',
             variableEvent: 'create, update'
           });
 

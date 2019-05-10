@@ -1,7 +1,7 @@
 {
-  "name": "camunda-bpmn-moddle",
+  "name": "emlab-apmn-moddle",
   "version": "3.2.0",
-  "description": "Camunda moddle extensions for BPMN 2.0",
+  "description": "Camunda moddle extensions for APMN",
   "scripts": {
     "all": "run-s lint test",
     "lint": "eslint .",
@@ -13,9 +13,8 @@
     "url": "https://github.com/camunda/camunda-bpmn-moddle"
   },
   "keywords": [
-    "bpmn",
+    "apmn",
     "moddle",
-    "bpmn20",
     "camunda",
     "meta-model"
   ],
@@ -32,7 +31,7 @@
   "license": "MIT",
   "devDependencies": {
     "async": "^2.6.0",
-    "bpmn-moddle": "^5.1.1",
+    "apmn-moddle": "^5.1.8",
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "eslint-plugin-bpmn-io": "^0.5.2",

@@ -15,7 +15,7 @@ describe('ids', function() {
       var moddle = createModdle();
 
       // when
-      moddle.fromXML(xml, 'bpmn:Definitions', function(err, definitions, context) {
+      moddle.fromXML(xml, 'apmn:Definitions', function(err, definitions, context) {
 
         if (err) {
           return done(err);

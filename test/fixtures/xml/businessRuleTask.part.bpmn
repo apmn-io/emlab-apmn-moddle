@@ -1,4 +1,4 @@
-<businessRuleTask xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+<businessRuleTask xmlns="http://apmn.io/spec/APMN/MODEL"
              xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
              decisionRef="myDecision"
              camunda:decisionRefBinding="version"

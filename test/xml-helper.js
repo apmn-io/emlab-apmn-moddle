@@ -2,7 +2,7 @@
 
 var SchemaValidator = require('xsd-schema-validator');
 
-var BPMN_XSD = 'test/fixtures/xsd/BPMN20.xsd';
+var APMN_XSD = 'test/fixtures/xsd/APMN.xsd';
 
 var Helper = require('./helper');
 
@@ -10,7 +10,7 @@ var Helper = require('./helper');
 module.exports.fromFile = function(moddle, file, done) {
   var fileContents = Helper.readFile(file);
 
-  moddle.fromXML(fileContents, 'bpmn:Definitions', done);
+  moddle.fromXML(fileContents, 'apmn:Definitions', done);
 };
 
 module.exports.toXML = function(element, opts, done) {
@@ -27,7 +27,7 @@ module.exports.validate = function(err, xml, done) {
     return done(new Error('XML is not defined'));
   }
 
-  SchemaValidator.validateXML(xml, BPMN_XSD, function(err, result) {
+  SchemaValidator.validateXML(xml, APMN_XSD, function(err, result) {
 
     if (err) {
       return done(err);

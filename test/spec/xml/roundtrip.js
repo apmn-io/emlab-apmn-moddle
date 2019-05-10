@@ -22,7 +22,7 @@ describe('import -> export roundtrip', function() {
 
       var moddle = createModdle();
 
-      moddle.fromXML(xml, 'bpmn:Definitions', function(err, definitions) {
+      moddle.fromXML(xml, 'apmn:Definitions', function(err, definitions) {
         if (err) {
           return done(err);
         }
